@@ -1,0 +1,12 @@
+>var x = 20
+
+//This is a comment
+
+>say "hello world"
+>say x
+>say "x"
+
+//Will print:
+//hello world
+//20
+//x
