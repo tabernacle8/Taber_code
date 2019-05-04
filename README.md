@@ -3,12 +3,12 @@ My own programming language that I made. Its cool and stuff.
 
 #Getting set up
 
-In the first line of the linereader.js file you need to replace the "doc.txt" with whatever file path you need to analyze and run. TYhats pretty much it, just run the entire file. 
+In the first line of the linereader.js file you need to replace the "doc.txt" with whatever file path you need to analyze and run. Thats pretty much it, just run the entire file. 
 
 #Base Syntax
 
-Commands start with ">". You can only write one command per line.
-Comments can be made by starting with "//" (No quotes)
+- Commands start with ">". You can only write one command per line.
+- Comments can be made by starting with "//" (No quotes)
 
 #Commands:
 
