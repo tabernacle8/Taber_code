@@ -1,0 +1,7 @@
+>var x = 20
+
+//This is my comment
+
+>say "hello world"
+>say x
+>say "x"
