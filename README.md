@@ -14,19 +14,21 @@ In the first line of the linereader.js file you need to replace the "doc.txt" wi
 
 >say
 
--Say text or a varible. Surround text with "". 
--Simply type a variable to say it 
--Variables and strings cannot yet be combined
--Examples:
+- Say text or a varible. Surround text with ""
+- Simply type a variable to say it 
+- Variables and strings cannot yet be combined
+- Examples:
   - >say "hello"
   - >say x
 
+
+
 >var
 
--Assign a variable to a string only (text will be interpreted as a string)
--Syntax: >var X = string (no quotes)
+- Assign a variable to a string only (text will be interpreted as a string)
+- Syntax: >var X = string (no quotes)
   -Spacing is key in this command. Or else you will get a illegial variable assignment.
--Examples:
+- Examples:
   - >var x = hi
   - >var x = 1
   
