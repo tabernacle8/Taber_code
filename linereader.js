@@ -42,16 +42,22 @@ fs.readFile(file_path, (err, data) => {
      while (count < lines.length){
             lines[count] = lines[count].replace(/\r/g, "");
             count+=1
+
      }
      //Assign variables
      var list_vars_name = []
      var list_vars_data = []
 
      count = 0
-
      while (count < lines.length){
+        var do_not_advance = 0
         line = lines[count]
-
+        if (list_vars_data ==null || list_vars_name ==null){
+            throw new Error(`Critical Process Died (NO_VARIABLES)`)
+        }
+        if(Number(count) < 0){
+            throw new Error(`Illegal line read (Terminal tried to read line: ${count}, failed). Wait.. How did this even happen`)
+        }
 
 
        // console.log("Interperted a line...")
@@ -60,7 +66,9 @@ fs.readFile(file_path, (err, data) => {
         if(line.startsWith("//")){
             //Do nothing
      }
-
+     else if(line.startsWith(">end")){
+       count = lines.length +10
+    }
 
        //Say Parsing
         else if(line.startsWith(">say ")){
@@ -78,6 +86,21 @@ fs.readFile(file_path, (err, data) => {
                 }
                 
             }
+        }
+        else if(line.startsWith(">moveto ")){
+            var total_count_line_moveto = line.replace(/>moveto /g, "");
+            var count_save = count
+            count = Number(total_count_line_moveto)
+            if(isNaN(count)){
+                throw new Error(`Illegal line movement (Tried to move to line: ${total_count_line_moveto}, failed [NaN] ) (Line ${count_save})`) 
+            }
+            if(Number(count) > lines.length){
+                throw new Error(`Illegal line movement (Tried to move to line: ${count}, failed [does not exist] ) (Line ${count_save})`)
+            }
+            if(Number(count) < 0){
+                throw new Error(`Illegal line movement (Tried to move to line: ${count}, failed [does not exist] ) (Line ${count_save})`)
+            }
+            do_not_advance = 1
         }
 
         //Var Parsing
@@ -111,9 +134,9 @@ fs.readFile(file_path, (err, data) => {
         }
 
 
-
+        if(do_not_advance !=1){
         count = count +1
+        }
      }
 
 }) 
-
