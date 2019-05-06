@@ -21,11 +21,13 @@ In the first line of the linereader.js file you need to replace the "doc.txt" wi
   - >say "hello"
   - >say x
 
+
 >moveto
 
 -Move to a line
 -Example:
   - >moveto 10
+
 
 >end
  
