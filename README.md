@@ -24,14 +24,14 @@ In the first line of the linereader.js file you need to replace the "doc.txt" wi
 
 >moveto
 
--Move to a line
--Example:
+- Move to a line
+- Example:
   - >moveto 10
 
 
 >end
  
- -end the program early
+ - End the program early
 
 
 >var
