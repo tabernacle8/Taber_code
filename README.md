@@ -21,6 +21,15 @@ In the first line of the linereader.js file you need to replace the "doc.txt" wi
   - >say "hello"
   - >say x
 
+>moveto
+
+-Move to a line
+-Example:
+  - >moveto 10
+
+>end
+ 
+ -end the program early
 
 
 >var
@@ -40,5 +49,8 @@ In the first line of the linereader.js file you need to replace the "doc.txt" wi
 - Illegal variable assignment: Bad >var syntax
 - Imput was given with no command: You typed ">" on a line but gave no command
 - Invalid syntax: You gotta type > before a command
+- Illegal line movement: You used the >moveto command that directs to a non-existing line
+- Illegal line read: Something got borked in the interpreter
+- CRITICAL PROCESS DIED: Prepare yourself for rage... You really messed something up
 
 
